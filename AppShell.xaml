@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiAppTestAppV2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:MauiAppTestAppV2.Pages"
+    Title="MauiAppTestAppV2">
+
+    <TabBar>
+        <Tab Title="CVTest">
+            <ShellContent ContentTemplate="{DataTemplate pages:CVTest}"
+                          Route="CVTest" />
+        </Tab>
+    </TabBar>
+
+</Shell>

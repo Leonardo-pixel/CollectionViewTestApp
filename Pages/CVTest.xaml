@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppTestAppV2.Pages.CVTest">
+
+    <Grid RowDefinitions="*, auto" ColumnDefinitions="*, *, *">
+        <CollectionView Grid.ColumnSpan="3" ItemsSource="{Binding Items}" EmptyView="{StaticResource EmptyTemplate}">
+            <CollectionView.Header>
+                <Grid ColumnDefinitions="*, *, *, *">
+                    <Button Text="Clear items" Command="{Binding ClearItemsCommand}" Margin="10"/>
+                    <Button Grid.Column="1" Text="Add item" Command="{Binding AddItemCommand}" Margin="10"/>
+                    <Button Grid.Column="2" Text="Remove item" Command="{Binding RemoveItemCommand}" Margin="10"/>
+                    <Button Grid.Column="3" Text="Generate items" Command="{Binding GenerateItemsCommand}" Margin="10"/>
+                </Grid>
+            </CollectionView.Header>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="50, *, auto" RowDefinitions="*, auto" BackgroundColor="White">
+                        <Label Text="{Binding Value}" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        <Label Grid.Column="1" Text="{Binding Name}" TextColor="Black" VerticalOptions="Center"/>
+                        <Button Grid.Column="2" Text="Details" Command="{Binding ButtonDetailCommand}" HeightRequest="40" Margin="10"/>
+                        <Border Grid.Row="1" Grid.ColumnSpan="3" Stroke="LightGray" StrokeThickness="0.5" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            <CollectionView.Resources>
+                <ResourceDictionary>
+                    <ContentView x:Key="EmptyTemplate" BackgroundColor="IndianRed" InputTransparent="True">
+                        <Border Stroke="White" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Grid RowDefinitions="auto, auto" Margin="100, 50">
+                                <Label Text="No items!" TextColor="White" />
+                                <Label Grid.Row="1" Text=":(" TextColor="White" HorizontalOptions="Center"/>
+                            </Grid>
+                        </Border>
+                    </ContentView>
+                </ResourceDictionary>
+            </CollectionView.Resources>
+        </CollectionView>
+        <Button Grid.Row="1" Grid.Column="1" Text="Generate items" Command="{Binding GenerateItemsCommand}" Margin="10" />
+    </Grid>
+</ContentPage>
