@@ -1,4 +1,4 @@
 ﻿# CollectionViewTestApp
 
-About
-Test app to demonstrate (button) click events in a CollectionView Header/Footer when an EmptyView is present.
+Test app to demonstrate (button) click event issues in a CollectionView Header/Footer when an EmptyView is present.
+
